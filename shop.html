@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoMART | Online Shopping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- THE BEST BACKGROUND & GLOBAL STYLES --- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            /* Animated Mesh Gradient */
+            background-color: #f8f9fa;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(210,100%,98%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(220,33%,94%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(210,100%,98%,1) 0, transparent 50%),
+                radial-gradient(at 50% 100%, hsla(225,39%,90%,1) 0, transparent 50%);
+            background-attachment: fixed;
+            background-size: 200% 200%;
+            animation: moveGradient 15s ease infinite;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar - Glassmorphism */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3436;
+        }
+
+        /* Layout */
+        .container {
+            padding: 100px 5% 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Product Card - Elevated Look */
+        .product-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0984e3;
+            margin: 10px 0;
+        }
+
+        .add-btn {
+            background: #2d3436;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            background: #0984e3;
+        }
+
+        /* Cart Sidebar (Basic placeholder styling) */
+        .cart-hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">ecoMART</div>
+    <button class="cart-btn" onclick="toggleCart()">
+        Cart <span id="cart-count">0</span>
+    </button>
+</header>
+
+<main class="container">
+    <section class="products-grid">
+        <div class="product-card">
+            <div class="img-container">
+                <img src="C:\Users\Admin\Desktop\51MWJJEzc9L._AC_UY1100_.jpg" alt="Bag">
+            </div>
+            <h3>Bag</h3>
+            <p class="price">₹500</p>
+            
+<button class="add-btn" onclick="addToCart('Eco Bag', 500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="C:\Users\Admin\Desktop\download.jfif"alt="Toothbrush">
+            </div>
+            <h3>Toothbrush</h3>
+            <p class="price">₹1,000</p>
+           
+
+<button class="add-btn" onclick="addToCart('Bamboo Toothbrush', 1000)">Add to Cart</button>
+
+
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="C:\Users\Admin\Desktop\download (1).jfif"alt="Water Bottle">
+            </div>
+            <h3>Water Bottle</h3>
+            <p class="price">₹1,000</p>
+            
+<button class="add-btn" onclick="addToCart('Steel Water Bottle', 1000)">Add to Cart</button>
+        </div>
+    </section>
+
+    <aside id="cart-section" class="cart-hidden">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <hr>
+        <h3>Total: ₹<span id="total">0</span></h3>
+    </aside>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
