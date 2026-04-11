@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMart - Sustainable Shopping</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* [Existing styles kept for brevity, showing only new/modified styles below] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-green: #2E7D32;
+            --secondary-green: #4CAF50;
+            --light-green: #A5D6A7;
+            --accent-gold: #FBC02D;
+            --dark: #1A1A1A;
+            --light-bg: #F8FFF8;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(46, 125, 50, 0.15);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--light-bg) 0%, #E8F5E8 100%);
+        }
+
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu { display: flex; list-style: none; gap: 2rem; }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .nav-menu a.active { color: var(--primary-green); border-bottom: 2px solid var(--primary-green); }
+
+        /* HERO STYLES */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2013');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+        /* Professional CTA Menu */
+        .hero-action-area {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .cta-primary {
+            background: var(--accent-gold);
+            color: var(--dark);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .nav-menu { display: none; } /* Add JS to toggle for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">EcoMart</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwiMtIP3reWTAxVxZA8CHWJyCdIYACICCAEQABoCdGI&co=1&ase=2&gclid=EAIaIQobChMIjLSD963lkwMVcWQPAh1icgnSEAAYASAAEgIrufD_BwE&ei=bgPaadrDKeu5vr0PtfO8kQY&cid=CAASuwHkaJtRl5w6VUvDm37D1DBOKTf9WHTMMZXdpKnpX2biL_Njdokt5XJfArinsjfH_pC3JP6URCIgkbJz9qlKKdvxZxL_ik8f1TZe3ebmoeE_FwQfYsx1Au_s9BDl7iYg6eGQnvxj_BPtGkcRS2kZn8GUBNaQhnn1cJGoesCGB_I97KajFvezWH23YC8Xdl3RxM13VpeiN-m_P2rfpuNY1Cu1kJ5xMrHVsGCkteqOrD7bHXqOCmrDau4xrGsO&cce=2&category=acrcp_v1_32&sig=AOD64_1FjGpRXdSuIaF01vQBbM1ZE2QPMw&q&sqi=2&nis=4&adurl=https://www.shopify.com/in/ppc/online-store?term%3Dshopify%26adid%3D566014743975%26campaignid%3D15433369407%26branded_enterprise%3D1%26BOID%3Dbrand%26utm_medium%3Dcpc%26utm_source%3Dgoogle%26matchtype%3De%26network%3Dg%26gad_source%3D1%26gad_campaignid%3D15433369407%26gbraid%3D0AAAAAC3QZJqyzFn6vqSEOjffxiTgsI0Wu%26gclid%3DEAIaIQobChMIjLSD963lkwMVcWQPAh1icgnSEAAYASAAEgIrufD_BwE&ved=2ahUKEwjasv72reWTAxXrnK8BHbU5L2IQ0Qx6BAgLEAE">Shop</a></li>
+               
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sustainable Shopping<br>for a Greener Tomorrow</h1>
+            <p>Discover eco-friendly products made with love for our planet.</p>
+            
+            <div class="hero-action-area">
+                <a href="https://www.bing.com/ck/a?!&&p=fc5f5de5125f3e308d0eb1ab8a185049349f35955eadb16c4764d60a723367eeJmltdHM9MTc3NTg2NTYwMA&ptn=3&ver=2&hsh=4&fclid=3df8e9f1-68cb-67e9-26e8-fd1e69cb662b&psq=+shop&u=a1aHR0cHM6Ly93d3cuZmxpcGthcnQuY29tLw" class="cta-button cta-primary"> Shop</a>
+              
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.padding = "0.5rem 0";
+            } else {
+                header.style.padding = "1rem 0";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
